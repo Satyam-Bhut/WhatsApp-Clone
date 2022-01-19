@@ -9,11 +9,9 @@ import Chattemp from './Chattemp';
 
 function App() {
 
-   // eslint-disable-next-line no-unused-vars
     const [{user},dispatch] = useStateValue();
    
   return (
-    // Bem naming conevtion
     <div className="app"> 
       {!user ? (
           <Login />
