@@ -2,7 +2,7 @@ import React,{useState,useEffect} from 'react'
 import './Chat.css'
 import { Avatar,IconButton } from '@material-ui/core' 
 import {Delete, AttachFile,MoreVert ,Mic,InsertEmoticon } from '@material-ui/icons';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import db from './firebase'
 import firebase from 'firebase/compat/app'
 import { useStateValue } from './StateProvider';
@@ -86,7 +86,7 @@ const Chat = () => {
         setRoomName("");
         setMessages([]);
 
-        window.location.href="/rooms";
+        //window.location.href="/rooms";
     }
     
     return (
@@ -107,9 +107,9 @@ const Chat = () => {
                         <IconButton>
                             <MoreVert />
                         </IconButton>  
-                        <IconButton onClick={deleteRoom}>
+                        <Link to="/"><IconButton onClick={deleteRoom}>
                             <Delete />
-                       </IconButton>
+                       </IconButton></Link>
                     </div>
                     
                 </div>
